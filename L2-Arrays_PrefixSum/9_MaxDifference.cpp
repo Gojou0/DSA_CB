@@ -1,8 +1,9 @@
+// Buy stock and sell
 #include <iostream>
 using namespace std;
 
 int main(){
-    int a[] = {13,24,52,51,65};
+    int a[] = {13,24,52,51,9};
     int n = sizeof(a) / sizeof(int);
     int suffix[100] = {0};
 
@@ -12,7 +13,7 @@ int main(){
         suffix[i] = max(suffix[i+1],a[i]);
     }
 
-    //Check Max Difference
+    //Check Max Difference    // right side k max se hi minus kr skte bas ya fir left side ke minimum se
     int ans = INT_MIN;
     for (int i = 0; i < n ; ++i){
         ans = max(ans,suffix[i+1] - a[i]);
