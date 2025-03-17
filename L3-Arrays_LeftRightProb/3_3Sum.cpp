@@ -21,7 +21,7 @@ int main(){
                 while (j < k && a[j] == a[j-1]) {    //to prevent duplicacy in j
                     j++;
                 }
-            }else if( a[j] + a[k] > 0) {
+            }else if( a[j] + a[k] > -a[i]) {
                 k--;
             }else{
                 j++;

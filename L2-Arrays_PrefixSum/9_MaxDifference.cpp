@@ -16,7 +16,7 @@ int main(){
     //Check Max Difference    // right side k max se hi minus kr skte bas ya fir left side ke minimum se
     int ans = INT_MIN;
     for (int i = 0; i < n ; ++i){
-        ans = max(ans,suffix[i+1] - a[i]);
+        ans = max(ans,suffix[i] - a[i]);
     }
     cout << "Max Difference : " << ans << endl;
 

@@ -22,7 +22,7 @@ int main(){
         right[i] = min(right[i+1],a[i]);
     }
 
-    int partition = 1;\
+    int partition = 1;
     for (int i = 1; i < n; i++){
         if (left[i] <= right[i]){
             partition++;
