@@ -32,6 +32,13 @@ bool isCBNumber(long long num) {
     return true;
 }
 
+bool isavail(vector<bool> arr, int s, int e){
+    for (int i = s; i <= e; i++){
+        if (arr[i]) return false;
+    }
+    return true;
+}
+
 int main(){
     CInitialise();
     int n;
@@ -39,6 +46,7 @@ int main(){
     string s;
     cin >> s;
     int c = 0;
+    vector<bool> visited(n, false);
     for (int i = 0; i < n; i++){
         for (int j = i; j < n; j++){
             string ans;
@@ -46,7 +54,12 @@ int main(){
                 ans += s[k];
             }
             long long a = stoi(ans);
-            if (isCBNumber(a)) c++;
+            if (isCBNumber(a) && isavail(visited, i, j)){
+                c++;
+                for (int k = i; k <= j; k++){
+                    visited[k] = true;
+                }
+            }
         }
     }
     cout << c << endl;

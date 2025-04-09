@@ -18,18 +18,20 @@ void Subsets(int* a, int* b, int n, int i, int j){
         cout << endl;
         return;
     }
-    
+
     // Recursive case
-    // 1-> ith ko mat lo b me
-    Subsets(a, b, n, i+1, j);
-    // 2-> ith ko le lo b me
+
+    // 1-> ith ko le lo b me
     b[j] = a[i];
     Subsets(a, b, n, i+1, j+1);
+    while (i+1 < n && a[i] == a[i+1]) i++;
+    // 2-> ith ko mat lo b me
+    Subsets(a, b, n, i+1, j);
 }
 
 
 int main(){
-    int a[] = {1,2,3};
+    int a[] = {1,2,2};
     int b[200];
     int n = sizeof(a) / sizeof(int);
 

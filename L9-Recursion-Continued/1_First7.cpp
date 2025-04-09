@@ -14,7 +14,7 @@ int Lastn(int* arr, int n, int a){
 }
 
 void All7(int* arr, int i, int n, int a){
-    if (i >= n) return;                 // here n is index ...and we use iterative appraoch
+    if (i >= n) return;                 // here we use iterative appraoch
     if (arr[i] == a) cout << i << " ";
     All7(arr, i+1, n, a);
 }
