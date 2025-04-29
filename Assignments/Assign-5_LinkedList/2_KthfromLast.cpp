@@ -31,24 +31,37 @@ Node* ConvertArr2LL(vector<int> &arr, int n){
     return head;
 }
 
+Node* kthfromlast(Node* head, int k){
+    Node* slow = head;
+    Node* fast = head;
+    int c = 0;
+    while (c < k){
+        fast = fast->next;
+        c++;
+    }
+
+    while (fast){
+        fast = fast->next;
+        slow = slow->next;
+    }
+
+    return slow;
+}
+
 int main(){
     vector<int> arr;
-    arr.push_back(0);
-    arr.push_back(1);
-    arr.push_back(2);
-    arr.push_back(3);
-    Node* head = ConvertArr2LL(arr, 4);
+	int n = 0;
+    while (true){
+		int x;
+		cin >> x;
+		if (x == -1) break;
+ 		arr.push_back(x);
+		n++;
+	}
+	int k;
+	cin >> k;
+    Node* head = ConvertArr2LL(arr, n);
 
-    // Tortoise and Hare Algo
-    Node* fast = head;
-    NOde* slow = head;
-    
-    while (fast && fast->next){
-        fast = fast->next->next;
-        slow = slow->next;
-
-        if (slow == fast) return true;
-    }
-    return false;
-
+    Node* ans = kthfromlast(head, k);
+    cout << ans->data << endl;
 }

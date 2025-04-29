@@ -71,7 +71,9 @@ int main(){
     arr.push_back(2);
     arr.push_back(3);
     Node* head = ConvertArr2LL(arr, 4);
-    cout << head->data << endl;
+    cout << head->data << endl;                 // arrow operator is used with pointers to print data of node which it is pointing
+    cout << head << endl;                   // head is a pointer to first node 
+    cout << (*head).data << endl;               // works same as arrow operator ...but we derefrence it first to get the node which it is pointing
 
     // LL traversal
     Node* temp = head;
