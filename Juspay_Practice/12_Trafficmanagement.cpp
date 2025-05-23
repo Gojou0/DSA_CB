@@ -33,7 +33,7 @@ int main(){
 
         if (t == 1){
             for (int k = j; k < px.size()-1; k++){
-                cost[{px[k], px[k+1]}] += toll;             // set toll to pair
+                cost[{px[k], px[k+1]}] += toll;             // set toll to each pair
                 cost[{px[k+1], px[k]}] += toll;         // since bidirectional
             }
             for (int k = j; k < py.size()-1; k++){
@@ -41,14 +41,12 @@ int main(){
                 cost[{py[k+1], py[k]}] += toll;
             }
         }else{
-            int sum = 0;
             for (int k = j; k < px.size()-1; k++){
-                sum += cost[{px[k], px[k+1]}];
+                ans += cost[{px[k], px[k+1]}];
             }
             for (int k = j; k < py.size()-1; k++){
-                sum += cost[{py[k], py[k+1]}];
+                ans += cost[{py[k], py[k+1]}];
             }
-            ans += sum;
         }
     }
 

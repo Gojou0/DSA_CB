@@ -22,7 +22,6 @@ int main(){
         }else{
             swap(nums[mid], nums[high]);                    // agr 2 h extreme right wale k starting m bhejo
             high--;
-            mid++;
         }
     }
     for (int i = 0; i < n; i++){

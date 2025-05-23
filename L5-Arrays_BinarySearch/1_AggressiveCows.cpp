@@ -2,37 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-// int main(){
-//     int a[] = {1, 2, 8, 4, 9};
-//     int n = sizeof(a) / sizeof(int);
-//     int cows = 3;
-//     sort(a, a+n);
-//     int s = 0;
-//     int e = 8;
-//     int ans = INT_MIN;
-    
-//     while (s <= e){
-//         cows = 3;
-//         int mid = (s + e) / 2;
-//         int i = 0;
-//         while (i < n){
-//             i = i + mid;
-//             cows--;
-//         }
-//         if (cows == 0){ 
-//             ans = max(mid, ans);
-//         }
-//         else if (cows > 0 ){
-//             e = mid - 1;
-//         }else{
-//             s = mid + 1;
-//         }
-//     }
-
-//     cout << ans;
-//     return 0;
-     
-// }
 
 int a[100005];
 int n, cows;

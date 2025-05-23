@@ -20,7 +20,7 @@ int main(){
     int n, r, m;
     cin >> n >> r >> m;
     vector<vector<int> > weight(n+1, vector<int> (n+1));
-    vector<vector<int> > adj(n+1, vector<int> (n+1));
+    vector<vector<int> > adj(n+1);
     for (int i = 0; i < n-1; i++){
         int u, v , w;
         cin >> u >> v >> w;
@@ -39,7 +39,7 @@ int main(){
         int u, v, w;
         cin >> u >> v >> w;
         if (t == 1){
-            dfs(u, v, -1, 0, adj, weight, ans);
+            dfs(u, v, -1, 0, adj, weight, ans);                 // take par as -1 as we don;t know its parent
         }else{
             weight[u][v] = w;
             weight[v][u] = w;

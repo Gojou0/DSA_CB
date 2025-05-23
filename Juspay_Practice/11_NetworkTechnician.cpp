@@ -11,16 +11,16 @@ void dfs(int curr, int pr, int cnt, vector<vector<int> > adj, vector<int> safene
 
     if (cnt > m) return;
 
-    bool leaf = false;
+    bool leaf = true;
 
-    for (int j = 0; j < adj[curr].size(); j++){
+    for (int j = 0; j < adj[curr].size(); j++){                
         int next = adj[curr][j];
         if (next == pr) continue;
-        leaf = true;
+        leaf = false;                    // agr leaf hoga to parent k alawa koi adjacent nhi hoga
         dfs(next, curr, cnt, adj, safeness, ans, m);
     }
 
-    if (!leaf && safeness[curr] == 1){
+    if (leaf && safeness[curr] == 1){
         ans++;
     }
 }
